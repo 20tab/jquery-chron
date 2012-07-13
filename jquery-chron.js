@@ -27,7 +27,7 @@
 			stop_chron		: function(){},//this function will be executed before stop chron
 			reset_chron		: function(){},//this function will be executed before reset chron
 			pause_chron		: function(){},//this function will be executed before pause chron
-			resume_chron	: function(){},//this function will be executed before resume chron
+			resume_chron		: function(){},//this function will be executed before resume chron
 			target			: "*", //selectors for the events target
 			auto			: true,//true if plugin generate html chronometer
 		},options);
