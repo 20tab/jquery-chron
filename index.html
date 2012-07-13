@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<title>Chron - jQuery plugin</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> 
+	<meta name="keywords" content="jQuery plugin chronometer timer" />
+	<meta name="description" content="A jQuery plugin to clonate chronometers" />
+	<meta name="author" content="Raffaele Colace - 20tab s.r.l." />
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="jquery-chron.min.js"></script> 	
+	<script type="text/javascript">
+		jQuery(function(){
+			$("#chron1").Chron().start();
+			
+			$("#chron2").Chron({
+				days			: 1,//initial value for days
+				hours			: 2,//initial value for hours
+				minutes			: 20,//initial value for minutes
+				seconds			: 45,//initial value for seconds
+				days_sel		: "#days2",//days selector
+				hours_sel		: "#hours2",//hours selector
+				minutes_sel		: "#minutes2",//minutes selector
+				seconds_sel		: "#seconds2",//seconds selector
+				start			: "#start2",// start button selector
+				stop			: "#stop2",// stop button selector
+				reset			: "#reset2",// reset button selector
+				pause			: "#pause2",// resume button selector
+				resume			: "#resume2",// resume button selector
+				start_chron		: start_chron,//this function will be executed before start chron
+				stop_chron		: stop_chron,//this function will be executed before stop chron
+				reset_chron		: reset_chron,//this function will be executed before reset chron
+				pause_chron		: pause_chron,//this function will be executed before pause chron
+				resume_chron	: resume_chron,//this function will be executed before resume chron
+				target			: "*", //selectors for the events target
+				auto			: true,//true if plugin generate html chronometer
+			});
+			function start_chron(){$("#message").html("started");}
+			function stop_chron(){$("#message").html("stopped");}
+			function resume_chron(){$("#message").html("resumed");}
+			function reset_chron(){$("#message").html("resetted");}
+			function pause_chron(){$("#message").html("paused");}
+		});
+	</script> 	
+	
+</head>
+<body>
+	<div class="chron">
+		<div id="chron1"></div>
+		<div class = "commands">
+			<button id="start" type="button" >Start</button>
+			<button id="stop" type="button">Stop</button>
+			<button id="pause" type="button" >Pause</button>
+			<button id="reset" type="button">Reset</button>
+			<button id="resume" type="button" >Resume</button>
+		</div>
+	</div>
+	<div class="chron">
+		<div id="chron2"></div>
+		<div class = "commands">
+			<button id="start2" type="button" >Start</button>
+			<button id="stop2" type="button">Stop</button>
+			<button id="pause2" type="button" >Pause</button>
+			<button id="reset2" type="button">Reset</button>
+			<button id="resume2" type="button" >Resume</button>
+		</div>
+	</div>
+	<div id="message"></div>		
+</body> 
+
+</html>
